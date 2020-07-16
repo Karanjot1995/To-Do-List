@@ -1,0 +1,115 @@
+body{
+  margin:0;
+  font-family: sans-serif;
+  text-align: center;
+  background: #e0e0e0;
+}
+
+.todo-app{
+  width:500px;
+  min-width: 350px;
+  margin:50px auto;
+  padding:20px 0px 30px;
+  background:white;
+}
+#page-heading{
+  text-align: center;
+  margin-top: 25px;
+  color:gray
+}
+.fa{
+  padding-right: 10px;
+}
+ul{
+  list-style-type: none;
+  width:450px;
+  margin: auto;
+  padding:0;
+
+}
+.details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:85%;
+  
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+}
+.add-item,.delete{
+ width: 180px;
+ background-color: #423e37;
+ color: white;
+ text-decoration: none;
+ border:1px solid #e0e0e0;
+ padding:10px 0px;
+ font-size: 18px;
+ margin:10px;
+ cursor: pointer;
+}
+
+.delete{
+  background-color: red;
+  /* display: flex;
+  justify-content: center; */
+}
+.delete p{
+  margin: 0;
+}
+
+.row{
+  display: flex;
+ 
+}
+input,select{
+  height:50px;
+  padding: 10px;
+  font-size: 17px;
+}
+.row input, select{
+  width:50%;
+  border:1px solid #e0e0e0;
+}
+input:focus,select:focus{
+  outline: none;
+}
+select[disabled] {
+  color: red;
+}
+.description{
+  width: 100%;
+  border:none;
+  border-top:1px solid #e0e0e0;
+}
+
+
+
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top:1px solid #e0e0e0;
+  padding:10px;
+}
+.fa-calendar{
+  padding-right: 5px;
+}
+
+.desc{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.desc p{
+  margin:2px;
+}
+
+.category{
+  background: cornflowerblue;
+  color: white;
+  padding:10px;
+  width: 80px;
+}

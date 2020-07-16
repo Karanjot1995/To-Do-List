@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+  </head>
+  <script>
+
+
+//  var abc = document.getElementsByTagName('select')
+//  console.log(abc.value)
+    // if(abc.value==""){
+    //   console.log('hi')
+    // }
+   
+  </script>
+  <body>
+  <div class="todo-app">
+    <h1 id="page-heading"><i class="fa fa-pencil-square-o"></i><%= title %></h1>
+   
+    <!-- <% function submitted(e){ console.log(e.target.value)} %> -->
+
+    <form action="/create" method="POST" class="add-form">
+      <input type="text" name="description" class="description" placeholder="enter description" required/>
+      <div class="row">
+        <select name="category" required>
+          <option value="" disabled selected>Choose Category</option>
+          <option value="Personal">Personal</option>
+          <option value="Household">Household</option>
+          <option value="Work">Work</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" name="date" required placeholder="DD/MM/YYYY" id="birthday">
+      </div>
+      <div class="buttons">
+        <button class="add-item" type="submit"><i class="fa fa-plus"></i>Add To Do item</button>
+        <a href="/delete-item/?id=" class="delete"><i class="fa fa-trash"></i>delete</a>
+      </div>
+      
+
+    </form>
+
+    <div class="list">
+
+      <ul>
+        <% for(let i of allToDos) { %>
+          <li class="todo">
+            <input type="checkbox" id="<%= i.id %>" name="checkbox" class="checkbox"/>
+            <div class="details">
+              <div class="desc">
+                <p><%= i.description %></p>
+                <p><i class="fa fa-calendar"></i><%= i.date %></p>
+              </div>
+              <p class="category"><%= i.category %></p>
+
+            </div>
+            <!-- <div class="delete-button">
+              <a href="/delete-item/?id=<%= i._id %>"><i class="fa fa-window-close"></i></a>
+            </div> -->
+            <!-- <%= i.id %>
+            <button id='<%= i.id %>'>delete contact</button> -->
+          </li>
+        <% } %>
+
+      </ul>
+    </div>
+  </div>
+
+  </body>
+  <script type="text/javascript" src="/js/home.js"></script>
+</html>
